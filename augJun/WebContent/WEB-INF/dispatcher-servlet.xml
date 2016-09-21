@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+
+
+
+	<context:annotation-config />
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<property name="username" value="jm" />
+		<property name="password" value="jm" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:cityMapper.xml" />
+	</bean>
+
+	<bean id="dao" class="ajax.Contorller.CommonDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+
+
+	<bean class="ajax.Contorller.CityServiceImpl" id="cityService" />
+
+	<bean class="ajax.Contorller.CityController" id="cityController">
+	</bean>
+
+
+
+
+
+
+
+
+
+	<bean class="spring.controller.OrderController" />
+	<bean id="articleService" class="spring.service.ArticleService" />
+	<bean id="newArticleController" class="spring.controller.NewArticleController"
+		p:articleService-ref="articleService" />
+	<bean id="helloController" class="spring.controller.HelloController" />
+	<bean class="spring.controller.HeaderController" />
+	<bean id="cookieController" class="spring.controller.CookieController" />
+	<bean class="spring.controller.CreateAccountController" />
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages.validation</value>
+			</list>
+		</property>
+	</bean>
+	<bean class="spring.controller.GameSearchController"
+		p:searchService-ref="searchService" />
+	<bean id="searchService" class="spring.service.SearchService" />
+	<bean class="spring.controller.GameInfoController" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="alwaysUseFullPath" value="true" />
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="alwaysUseFullPath" value="true" />
+	</bean>
+	<bean class="spring.controller.CharacterInfoController" />
+	<bean id="commonLogger" class="spring.common.CommonLoggerImpl" />
+	<bean id="authenticator" class="spring.service.MockAuthenticator"
+		p:commonLogger-ref="commonLogger" />
+	<bean class="spring.controller.LoginController">
+		<property name="authenticator" ref="authenticator" />
+	</bean>
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
+	<bean class="spring.controller.ReportSubmissionController" />
+	<bean class="spring.controller.QueryLogController" />
+
+
+
+
+
+
+
+	<bean class="spring.controller.EventController" />
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="alwaysUseFullPath" value="true" />
+		<property name="interceptors">
+			<list>
+				<ref bean="eventExpirationCheckInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="eventExpirationCheckInterceptor" class="spring.interceptor.EventExpirationCheckInterceptor" />
+
+
+	<bean class="spring.controller.ArithmeticOperatorController" />
+
+
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.ArithmeticException">
+					error/mathException
+				</prop>
+				<prop key="java.lang.Exception">
+					error/exception
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+</beans>
