@@ -21,24 +21,20 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath:sql/mapper.xml" />
 	</bean>
-	
-	<bean id = "dao" class="spring.mybatis.FileDAO">
-	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+
+	<!-- <bean id = "dao" class="spring.mybatis.FileDAO"> <property name="sqlSessionFactory" 
+		ref="sqlSessionFactory"></property> </bean> -->
+
+	<bean id="dao" class="pro.deptDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
-	
-<!-- 
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="sqlSessionFactory" />
-	</bean>
-	
-	<bean id="dao" class="spring.mybatis.MemberDAO">
-		<property name="session" ref="sqlSessionFactory"/>
-	</bean>   -->
-<!-- 	 <bean id="dao" class="spring.mybatis.MemberDAO">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-	</bean> 
- -->
-	
+
+	<!-- <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"> 
+		<constructor-arg ref="sqlSessionFactory" /> </bean> <bean id="dao" class="spring.mybatis.MemberDAO"> 
+		<property name="session" ref="sqlSessionFactory"/> </bean> -->
+	<!-- <bean id="dao" class="spring.mybatis.MemberDAO"> <property name="sqlSessionFactory" 
+		ref="sqlSessionFactory"/> </bean> -->
+
 
 
 </beans>

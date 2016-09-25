@@ -96,6 +96,7 @@
 
 
 
+	<bean class="pro.final_test" />
 
 
 

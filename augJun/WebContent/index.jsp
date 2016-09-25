@@ -58,9 +58,9 @@ font-size: 20pt;
 <a href="tiles/member/regist.do">/member/regist.do</a>
 <br>
 <a href="download/file">/download/*</a>
-
-
-
+<br>
+<a href="final_test/chart.do">/final_test/chart.do</a>
+<br>
 
 </body>
 </html>
