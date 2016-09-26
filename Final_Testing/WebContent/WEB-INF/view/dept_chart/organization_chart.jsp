@@ -126,28 +126,28 @@ tr, td {
 			<td></td>
 		</tr>
 
-<c:forEach var="dept" items="${ dept }">
-<c:choose>
-<c:when test="${ dept.key == 1 }">
-		<!-- 5 -->
-		<tr class="button_size_one">
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<!--  -->
-			<td></td>
-			<td></td>
-			<td></td>
-			<td colspan="2" rowspan="2" class="box_button">${ dept.value }</td>
-			<td></td>
-			<td></td>
-		</tr>
-</c:when>
-</c:choose>
-</c:forEach>
+		<c:forEach var="dept" items="${ dept }">
+			<c:choose>
+				<c:when test="${ dept.key == 1 }">
+					<!-- 5 -->
+					<tr class="button_size_one">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<!--  -->
+						<td></td>
+						<td></td>
+						<td></td>
+						<td colspan="2" rowspan="2" class="box_button">${ dept.value }</td>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:when>
+			</c:choose>
+		</c:forEach>
 
 
 		<!-- 6 -->
@@ -210,7 +210,7 @@ tr, td {
 		<!-- 10 -->
 		<tr>
 		</tr>
-		
+
 
 		<!-- 11 -->
 		<tr>
@@ -232,13 +232,7 @@ tr, td {
 
 		<!-- 12 -->
 		<tr class="button_size_two">
-		<c:forEach var="dept1" items="${ dept }">
-		<c:choose>
-		<c:when test="${ dept1.key }">
-			<td colspan="2" class="box_button">${ dept1.value }</td>
-		</c:when>
-		</c:choose>
-		</c:forEach>
+			<td colspan="2" class="box_button"></td>
 			<td></td>
 			<td colspan="2" class="box_button"></td>
 			<td></td>
