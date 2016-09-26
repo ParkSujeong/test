@@ -22,6 +22,8 @@ public class DeptDAO extends SqlSessionDaoSupport {
 			
 		}
 		
+		System.out.println("dept_map ::: " + dept_map.toString());
+		
 		return dept_map;
 	}
 

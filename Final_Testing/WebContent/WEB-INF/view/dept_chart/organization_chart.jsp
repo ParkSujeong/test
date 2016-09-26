@@ -5,6 +5,19 @@
 <head>
 <title>Insert title here</title>
 
+<script>
+
+function chart_click(num) {
+	// 해당 부서에 등록되어 있는 사원 리스트 조회
+	
+	var dept_num = num;
+	
+	alert(dept_num)
+	
+}
+
+</script>
+
 <style>
 body {
 	width: 100%;
@@ -40,11 +53,13 @@ tr, td {
 .box_button {
 	background-color: #95A7B6;
 	margin: auto;
+	color: #23282D;
+	font-weight: bold;
 	text-align: center;
 }
 
 .box_button:HOVER {
-	background-color: #7EC5D8;
+	background-color: #B0CEEB;
 }
 
 .line_no_bottom {
@@ -141,7 +156,7 @@ tr, td {
 						<td></td>
 						<td></td>
 						<td></td>
-						<td colspan="2" rowspan="2" class="box_button">${ dept.value }</td>
+						<td colspan="2" rowspan="2" class="box_button" onclick="chart_click(${ dept.key })">${ dept.value }</td>
 						<td></td>
 						<td></td>
 					</tr>
@@ -211,8 +226,7 @@ tr, td {
 		<tr>
 		</tr>
 
-
-		<!-- 11 -->
+ 		<!-- 11 -->
 		<tr>
 			<td></td>
 			<td></td>
@@ -230,7 +244,51 @@ tr, td {
 			<td></td>
 		</tr>
 
-		<!-- 12 -->
+<c:if test="${ !empty dept }">
+<c:forEach var="dept_1" items="${ dept }">
+<c:choose>
+<c:when test="${ dept_1.key gt 1 && dept_1.key lt 5 }">
+			<!-- 12 -->
+			<tr class="button_size_two">
+				<td colspan="2" class="box_button">${ dept_1.value }</td>
+				<td></td>
+				<td colspan="2" class="box_button"></td>
+				<td></td>
+				<td colspan="2" class="box_button"></td>
+				<td></td>
+				<td colspan="2" class="box_button"></td>
+				<td></td>
+				<td colspan="2" class="box_button"></td>
+			</tr>
+
+
+			<!-- 13 -->
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			</c:when>
+
+			</c:choose>
+			</c:forEach>
+
+</c:if>
+ 
+
+		<!-- 
+		14
 		<tr class="button_size_two">
 			<td colspan="2" class="box_button"></td>
 			<td></td>
@@ -243,8 +301,7 @@ tr, td {
 			<td colspan="2" class="box_button"></td>
 		</tr>
 
-
-		<!-- 13 -->
+		15
 		<tr>
 			<td></td>
 			<td></td>
@@ -262,38 +319,7 @@ tr, td {
 			<td></td>
 		</tr>
 
-		<!-- 14 -->
-		<tr class="button_size_two">
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-		</tr>
-
-		<!-- 15 -->
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-
-		<!-- 16 -->
+		16
 		<tr class="button_size_two">
 			<td colspan="2" class="box_button"></td>
 			<td></td>
@@ -307,7 +333,7 @@ tr, td {
 			<td></td>
 			<td colspan="2" class="box_button"></td>
 		</tr>
-
+ -->
 
 	</table>
 

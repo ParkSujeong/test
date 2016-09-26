@@ -24,7 +24,7 @@ public class Final_Test {
 	@ModelAttribute("dept")
 	public Map<Integer, String> dept_name() {
 		/*Map<Integer, String> dept_map = new HashMap<Integer, String>();*/
-		DeptDTO dto = new DeptDTO();
+
 		Map<Integer, String> dept_map = dao.dept_Mapping();
 	
 
