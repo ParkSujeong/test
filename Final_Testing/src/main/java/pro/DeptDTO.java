@@ -1,6 +1,6 @@
 package pro;
 
-public class deptDTO {
+public class DeptDTO {
 
 	private int dept_num;
 	private String dept_name;
@@ -10,13 +10,13 @@ public class deptDTO {
 		return "deptDTO [dept_num=" + dept_num + ", dept_name=" + dept_name + "]";
 	}
 
-	public deptDTO(int dept_num, String dept_name) {
+	public DeptDTO(int dept_num, String dept_name) {
 		super();
 		this.dept_num = dept_num;
 		this.dept_name = dept_name;
 	}
 	
-	public deptDTO() {
+	public DeptDTO() {
 		super();
 	}
 

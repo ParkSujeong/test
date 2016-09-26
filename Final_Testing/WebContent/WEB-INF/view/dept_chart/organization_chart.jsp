@@ -44,7 +44,7 @@ tr, td {
 }
 
 .box_button:HOVER {
-	background-color: #E9CA34;
+	background-color: #7EC5D8;
 }
 
 .line_no_bottom {
@@ -108,7 +108,6 @@ tr, td {
 			<td></td>
 		</tr>
 
-		<%-- <c:if test="${ dept.1 == 1 }"> --%>
 		<!-- 4 -->
 		<tr>
 			<td></td>
@@ -127,6 +126,9 @@ tr, td {
 			<td></td>
 		</tr>
 
+<c:forEach var="dept" items="${ dept }">
+<c:choose>
+<c:when test="${ dept.key == 1 }">
 		<!-- 5 -->
 		<tr class="button_size_one">
 			<td></td>
@@ -139,10 +141,14 @@ tr, td {
 			<td></td>
 			<td></td>
 			<td></td>
-			<td colspan="2" rowspan="2" class="box_button"></td>
+			<td colspan="2" rowspan="2" class="box_button">${ dept.value }</td>
 			<td></td>
 			<td></td>
 		</tr>
+</c:when>
+</c:choose>
+</c:forEach>
+
 
 		<!-- 6 -->
 		<tr class="button_size_one">
@@ -159,7 +165,6 @@ tr, td {
 			<td></td>
 			<td></td>
 		</tr>
-		<%-- </c:if> --%>
 
 		<!-- 7 -->
 		<tr>
@@ -191,20 +196,21 @@ tr, td {
 
 		<!-- 9 -->
 		<tr>
-			<td colspan="2" rowspan="2" class="box"></td>
+			<td colspan="2" rowspan="2" class="box">관리부</td>
 			<td rowspan="2" class="line_no_top"></td>
-			<td colspan="2" rowspan="2" class="box"></td>
+			<td colspan="2" rowspan="2" class="box">경영부</td>
 			<td rowspan="2" class="line_no_top"></td>
-			<td colspan="2" rowspan="2" class="box"></td>
+			<td colspan="2" rowspan="2" class="box">제품부</td>
 			<td rowspan="2" class="line_no_top"></td>
-			<td colspan="2" rowspan="2" class="box"></td>
+			<td colspan="2" rowspan="2" class="box">기술부</td>
 			<td rowspan="2" class="line_no_top"></td>
-			<td colspan="2" rowspan="2" class="box"></td>
+			<td colspan="2" rowspan="2" class="box">영업부</td>
 		</tr>
 
 		<!-- 10 -->
 		<tr>
 		</tr>
+		
 
 		<!-- 11 -->
 		<tr>
@@ -226,7 +232,13 @@ tr, td {
 
 		<!-- 12 -->
 		<tr class="button_size_two">
-			<td colspan="2" class="box_button"></td>
+		<c:forEach var="dept1" items="${ dept }">
+		<c:choose>
+		<c:when test="${ dept1.key }">
+			<td colspan="2" class="box_button">${ dept1.value }</td>
+		</c:when>
+		</c:choose>
+		</c:forEach>
 			<td></td>
 			<td colspan="2" class="box_button"></td>
 			<td></td>
@@ -236,6 +248,7 @@ tr, td {
 			<td></td>
 			<td colspan="2" class="box_button"></td>
 		</tr>
+
 
 		<!-- 13 -->
 		<tr>
@@ -303,19 +316,6 @@ tr, td {
 
 
 	</table>
-	<c:forEach items="${dept}" var="dept_map">
 
-		<c:choose>
-			<c:when test="${dept_map.key == 1}">
-${dept_map.value}
-
-</c:when>
-
-
-
-		</c:choose>
-
-
-	</c:forEach>
 </body>
 </html>

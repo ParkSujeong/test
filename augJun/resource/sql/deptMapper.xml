@@ -3,8 +3,8 @@
 
 <mapper namespace="dept">
 
-	<select id="select" resultType="String">
-		select * from dept
+	<select id="select" resultType="pro.deptDTO">
+		select * from organization_chart
 	</select>
 
 </mapper>

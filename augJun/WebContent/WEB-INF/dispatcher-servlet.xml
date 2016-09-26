@@ -3,10 +3,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 
 
@@ -20,37 +22,45 @@
 	</bean>
 
 
+	<context:property-placeholder location="classpath:sql/db.properties" />
 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<property name="username" value="jm" />
-		<property name="password" value="jm" />
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.password}" />
 	</bean>
+
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath:cityMapper.xml" />
+		<property name="mapperLocations" value="classpath:sql/*.xml" />
 	</bean>
 
-	<bean id="dao" class="ajax.Contorller.CommonDAO">
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="dao" class="pro.DeptDAO">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
-
-
-	<bean class="ajax.Contorller.CityServiceImpl" id="cityService" />
-
-	<bean class="ajax.Contorller.CityController" id="cityController">
-	</bean>
+	<bean class="pro.Final_Test" p:dao-ref="dao" />
 
 
 
+	<!-- <bean id="dao" class="ajax.Contorller.CommonDAO"> <property name="sqlSessionFactory" 
+		ref="sqlSessionFactory" /> </bean> <bean class="ajax.Contorller.CityServiceImpl" 
+		id="cityService" /> <bean class="ajax.Contorller.CityController" id="cityController"> 
+		</bean> -->
 
 
 
 
 
+
+<!-- 
 
 	<bean class="spring.controller.OrderController" />
 	<bean id="articleService" class="spring.service.ArticleService" />
@@ -96,7 +106,6 @@
 
 
 
-	<bean class="pro.final_test" />
 
 
 
@@ -133,17 +142,17 @@
 	</bean>
 
 
+ -->
 
 
 
 
 
 
- 
- 
- 
- 
- 
+
+
+
+
 
 
 </beans>
