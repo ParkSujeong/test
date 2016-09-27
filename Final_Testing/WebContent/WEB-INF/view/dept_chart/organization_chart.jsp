@@ -11,8 +11,7 @@ function chart_click(num) {
 	// 해당 부서에 등록되어 있는 사원 리스트 조회
 	
 	var com_dept_num = num;
-	
-	alert(com_dept_num);
+
 	location.href="dept_memList.do?com_dept_num=" + com_dept_num;
 	
 }
@@ -23,6 +22,10 @@ function chart_click(num) {
 body {
 	width: 100%;
 	margin-top: 2%;
+}
+
+#chart {
+	width: 100%;
 }
 
 table {
@@ -36,7 +39,7 @@ tr, td {
 }
 
 .box {
-	background-color: #345C86;
+	background-color: #344d91;
 	color: white;
 	font-weight: bold;
 	margin: auto;
@@ -44,7 +47,7 @@ tr, td {
 }
 
 .box_CEO {
-	background-color: #345C86;
+	background-color: #344d91;
 	color: white;
 	font-weight: bold;
 	margin: auto;
@@ -52,11 +55,16 @@ tr, td {
 }
 
 .box_button {
-	background-color: #95A7B6;
-	margin: auto;
+	background-color: #e9ebee;
 	color: #23282D;
 	font-weight: bold;
 	text-align: center;
+	border: 1.5px solid #344d91;
+	cursor: pointer;
+	line-height: 40px;
+	width: 120px;
+	height: 40px;
+	margin-bottom: 40px;
 }
 
 .box_button:HOVER {
@@ -64,9 +72,9 @@ tr, td {
 }
 
 .line_no_bottom {
-	border-top: 2px solid #345C86;
-	border-left: 2px solid #345C86;
-	border-right: 2px solid #345C86;
+	border-top: 2px solid #344d91;
+	border-left: 2px solid #344d91;
+	border-right: 2px solid #344d91;
 }
 
 .line_no_top {
@@ -74,11 +82,11 @@ tr, td {
 }
 
 .line_on_rt {
-	border-right: 2px solid #345C86;
+	border-right: 2px solid #344d91;
 }
 
 .line_on_top {
-	border-top: 2px solid #345C86;
+	border-top: 2px solid #344d91;
 }
 
 .button_size_one {
@@ -88,9 +96,37 @@ tr, td {
 .button_size_two {
 	height: 40px;
 }
+
+#div_center {
+	border: 1.5px solid #344d91;
+	position: absolute;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.div_location {
+	display: inline-block;
+	margin: 0 auto;
+	border: 1.5px solid #344d91;
+	margin-right: 60px;
+	
+}
+
+#div_up_one {
+	margin-top: 0px;
+}
+
+#div_up_two {
+	margin-top: 0px;
+}
+
+#div_no_margin {
+	margin-right: 0px;
+}
 </style>
 </head>
-<body>
+<body ondragstart="return false">
+<div id="chart">
 
 	<!-- 14*16 -->
 	<table>
@@ -246,50 +282,172 @@ tr, td {
 			<td></td>
 		</tr>
 
-		<c:if test="${ !empty dept }">
-			<c:forEach var="dept_1" items="${ dept }">
-				<c:choose>
-					<c:when test="${ dept_1.key gt 1 && dept_1.key lt 5 }">
-						<!-- 12 -->
-						<tr class="button_size_two">
-							<td colspan="2" class="box_button">${ dept_1.value }</td>
-							<td></td>
-							<td colspan="2" class="box_button"></td>
-							<td></td>
-							<td colspan="2" class="box_button"></td>
-							<td></td>
-							<td colspan="2" class="box_button"></td>
-							<td></td>
-							<td colspan="2" class="box_button"></td>
-						</tr>
+	</table>
 
 
-						<!-- 13 -->
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</c:when>
-				</c:choose>
+	<div id="div_center">
+
+		<div class="div_location">
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 1 && dept.key lt 5 }">
+					<div class="box_button" class="box_button"
+						onclick="chart_click(${ dept.key })">${ dept.value }</div>
+				</c:if>
 			</c:forEach>
-		</c:if>
+		</div>
 
+		<div class="div_location">
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 4 && dept.key lt 8 }">
+					<div class="box_button" class="box_button"
+						onclick="chart_click(${ dept.key })">${ dept.value }</div>
+				</c:if>
+			</c:forEach>
+		</div>
+
+		<div class="div_location" id="div_up_one">
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 7 && dept.key lt 10 }">
+					<div class="box_button" class="box_button"
+						onclick="chart_click(${ dept.key })">${ dept.value }</div>
+				</c:if>
+			</c:forEach>
+		</div>
+
+		<div class="div_location" id="div_up_two">
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 9 && dept.key lt 12 }">
+					<div class="box_button" class="box_button"
+						onclick="chart_click(${ dept.key })">${ dept.value }</div>
+				</c:if>
+			</c:forEach>
+		</div>
+
+		<div class="div_location" id="div_no_margin">
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 11 && dept.key le 14 }">
+					<div class="box_button" class="box_button"
+						onclick="chart_click(${ dept.key })">${ dept.value }</div>
+				</c:if>
+			</c:forEach>
+		</div>
+
+	</div>
+
+
+
+	<%-- 		
+			<div>
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 1 && dept.key lt 5 }">
+					<!-- 12 -->
+					<tr class="button_size_two">
+						<td colspan="2" class="box_button">${ dept.value }</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
+			</c:forEach>
+		</div>
+
+
+		<div id="one">
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 4 && dept.key lt 8 }">
+					<!-- 12 -->
+					<tr class="button_size_two">
+						<td colspan="2" class="box_button">${ dept.value }</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
+			</c:forEach>
+		</div>
+
+
+		<div>
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 7 && dept.key lt 10 }">
+					<!-- 12 -->
+					<tr class="button_size_two">
+						<td colspan="2" class="box_button">${ dept.value }</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
+			</c:forEach>
+		</div>
+
+
+		<div>
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key gt 9 && dept.key lt 12 }">
+					<!-- 12 -->
+					<tr class="button_size_two">
+						<td colspan="2" class="box_button">${ dept.value }</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
+			</c:forEach>
+		</div>
+
+
+		<div>
+			<c:forEach var="dept" items="${ dept }">
+				<c:if test="${ dept.key ge 11 && dept.key le 15 }">
+					<!-- 12 -->
+					<tr class="button_size_two">
+						<td colspan="2" class="box_button">${ dept.value }</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
+			</c:forEach>
+		</div>
+
+
+		<!-- 13 -->
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
 
 
 		<!-- 14 -->
-<!-- 		<tr class="button_size_two">
+		<tr class="button_size_two">
 			<td colspan="2" class="box_button"></td>
 			<td></td>
 			<td colspan="2" class="box_button"></td>
@@ -299,10 +457,10 @@ tr, td {
 			<td colspan="2" class="box_button"></td>
 			<td></td>
 			<td colspan="2" class="box_button"></td>
-		</tr> -->
+		</tr>
 
 		<!-- 15 -->
-<!-- 		<tr>
+		<tr>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -317,10 +475,11 @@ tr, td {
 			<td></td>
 			<td></td>
 			<td></td>
-		</tr> -->
+		</tr>
+		-->
 
 		<!-- 16 -->
-<!-- 		<tr class="button_size_two">
+		<tr class="button_size_two">
 			<td colspan="2" class="box_button"></td>
 			<td></td>
 			<td colspan="2" class="box_button"></td>
@@ -333,9 +492,8 @@ tr, td {
 			<td></td>
 			<td colspan="2" class="box_button"></td>
 		</tr>
- -->
+ --%>
 
-	</table>
-
+</div>
 </body>
 </html>

@@ -21,8 +21,6 @@ public class DeptDAO extends SqlSessionDaoSupport {
 
 		}
 
-		System.out.println("dept_map ::: " + dept_map.toString());
-
 		return dept_map;
 	}
 
@@ -41,8 +39,6 @@ public class DeptDAO extends SqlSessionDaoSupport {
 		map.put("com_num", com_num);
 		map.put("com_dept_num", com_dept_num);
 		ArrayList mem_List = (ArrayList) getSqlSession().selectList("dept.memList", map);
-		
-		
 		
 		return mem_List;
 	}

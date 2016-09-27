@@ -45,6 +45,8 @@
 	<bean id="Dept_Controller" class="pro.Dept_Controller" p:dao-ref="dao"/>
 
 	<bean id="Dept_MemList" class="pro.Dept_MemList" p:dao-ref="dao"/>
+	
+	<bean id="Dept_Member_Data" class="pro.Dept_Member_Data" p:dao-ref="dao"/>
 
 
 </beans>

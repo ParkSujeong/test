@@ -4,7 +4,7 @@
 <mapper namespace="dept">
 
 	<select id="select" parameterType="int" resultType="pro.DeptDTO">
-		select distinct com_dept_num, com_dept_name from members where com_num=#{com_num}
+		select distinct com_dept_num, com_dept_name from members where com_num=#{com_num} order by com_dept_num
 	</select>
 	
 	<select id="ceoName" parameterType="int" resultType="String">
@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="memList" parameterType="Map" resultType="pro.Dept_Person_InfoDataBean">
-		select com_pos_name, name, mem_num, phone_num, email from members where com_dept_num=#{com_dept_num} and com_num=#{com_num}
+		select com_pos_name, name, mem_num, phone_num, email from members where com_dept_num=#{com_dept_num} and com_num=#{com_num} order by com_pos_num
 	</select>
 
 </mapper>
