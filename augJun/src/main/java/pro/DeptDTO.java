@@ -2,38 +2,38 @@ package pro;
 
 public class DeptDTO {
 
-	private int dept_num;
-	private String dept_name;
+	private int com_dept_num;
+	private String com_dept_name;
 
-	@Override
-	public String toString() {
-		return "deptDTO [dept_num=" + dept_num + ", dept_name=" + dept_name + "]";
-	}
-
-	public DeptDTO(int dept_num, String dept_name) {
+	public DeptDTO(int com_dept_num, String com_dept_name) {
 		super();
-		this.dept_num = dept_num;
-		this.dept_name = dept_name;
+		this.com_dept_num = com_dept_num;
+		this.com_dept_name = com_dept_name;
 	}
-	
+
 	public DeptDTO() {
 		super();
 	}
 
-	public int getDept_num() {
-		return dept_num;
+	@Override
+	public String toString() {
+		return "DeptDTO [com_dept_num=" + com_dept_num + ", com_dept_name=" + com_dept_name + "]";
 	}
 
-	public void setDept_num(int dept_num) {
-		this.dept_num = dept_num;
+	public int getCom_dept_num() {
+		return com_dept_num;
 	}
 
-	public String getDept_name() {
-		return dept_name;
+	public void setCom_dept_num(int com_dept_num) {
+		this.com_dept_num = com_dept_num;
 	}
 
-	public void setDept_name(String dept_name) {
-		this.dept_name = dept_name;
+	public String getCom_dept_name() {
+		return com_dept_name;
+	}
+
+	public void setCom_dept_name(String com_dept_name) {
+		this.com_dept_name = com_dept_name;
 	}
 
 }

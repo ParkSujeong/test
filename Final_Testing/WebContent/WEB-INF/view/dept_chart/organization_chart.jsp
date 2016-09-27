@@ -10,9 +10,10 @@
 function chart_click(num) {
 	// 해당 부서에 등록되어 있는 사원 리스트 조회
 	
-	var dept_num = num;
+	var com_dept_num = num;
 	
-	alert(dept_num)
+	alert(com_dept_num);
+	location.href="dept_memList.do?com_dept_num=" + com_dept_num;
 	
 }
 
@@ -97,7 +98,7 @@ tr, td {
 		<!-- 1 -->
 		<tr>
 			<td colspan="6" rowspan="2"></td>
-			<td colspan="2" rowspan="2" class="box_CEO">CEO Name</td>
+			<td colspan="2" rowspan="2" class="box_CEO">CEO ${ ceo_name }</td>
 			<td colspan="6" rowspan="2"></td>
 		</tr>
 
@@ -156,7 +157,8 @@ tr, td {
 						<td></td>
 						<td></td>
 						<td></td>
-						<td colspan="2" rowspan="2" class="box_button" onclick="chart_click(${ dept.key })">${ dept.value }</td>
+						<td colspan="2" rowspan="2" class="box_button"
+							onclick="chart_click(${ dept.key })">${ dept.value }</td>
 						<td></td>
 						<td></td>
 					</tr>
@@ -226,7 +228,7 @@ tr, td {
 		<tr>
 		</tr>
 
- 		<!-- 11 -->
+		<!-- 11 -->
 		<tr>
 			<td></td>
 			<td></td>
@@ -244,83 +246,81 @@ tr, td {
 			<td></td>
 		</tr>
 
-<c:if test="${ !empty dept }">
-<c:forEach var="dept_1" items="${ dept }">
-<c:choose>
-<c:when test="${ dept_1.key gt 1 && dept_1.key lt 5 }">
-			<!-- 12 -->
-			<tr class="button_size_two">
-				<td colspan="2" class="box_button">${ dept_1.value }</td>
-				<td></td>
-				<td colspan="2" class="box_button"></td>
-				<td></td>
-				<td colspan="2" class="box_button"></td>
-				<td></td>
-				<td colspan="2" class="box_button"></td>
-				<td></td>
-				<td colspan="2" class="box_button"></td>
-			</tr>
+		<c:if test="${ !empty dept }">
+			<c:forEach var="dept_1" items="${ dept }">
+				<c:choose>
+					<c:when test="${ dept_1.key gt 1 && dept_1.key lt 5 }">
+						<!-- 12 -->
+						<tr class="button_size_two">
+							<td colspan="2" class="box_button">${ dept_1.value }</td>
+							<td></td>
+							<td colspan="2" class="box_button"></td>
+							<td></td>
+							<td colspan="2" class="box_button"></td>
+							<td></td>
+							<td colspan="2" class="box_button"></td>
+							<td></td>
+							<td colspan="2" class="box_button"></td>
+						</tr>
 
 
-			<!-- 13 -->
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			</c:when>
-
-			</c:choose>
+						<!-- 13 -->
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</c:when>
+				</c:choose>
 			</c:forEach>
+		</c:if>
 
-</c:if>
- 
 
-		<!-- 
-		14
-		<tr class="button_size_two">
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-		</tr>
 
-		15
-		<tr>
+		<!-- 14 -->
+<!-- 		<tr class="button_size_two">
+			<td colspan="2" class="box_button"></td>
 			<td></td>
+			<td colspan="2" class="box_button"></td>
 			<td></td>
+			<td colspan="2" class="box_button"></td>
 			<td></td>
+			<td colspan="2" class="box_button"></td>
 			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
+			<td colspan="2" class="box_button"></td>
+		</tr> -->
 
-		16
-		<tr class="button_size_two">
+		<!-- 15 -->
+<!-- 		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr> -->
+
+		<!-- 16 -->
+<!-- 		<tr class="button_size_two">
 			<td colspan="2" class="box_button"></td>
 			<td></td>
 			<td colspan="2" class="box_button"></td>
