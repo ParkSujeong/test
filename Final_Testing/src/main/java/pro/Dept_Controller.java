@@ -35,8 +35,9 @@ public class Dept_Controller {
 		return dept_map;
 	}
 	
+/*	
 	@ModelAttribute
-	public Model sessionSetting(Model model, HttpSession session) {
+	public static Model sessionSetting(Model model, HttpSession session) {
 		// session 임의 등록
 		
 		model.addAttribute("com_num", 100);
@@ -45,8 +46,9 @@ public class Dept_Controller {
 		session.setAttribute("com_name", "naver");
 		
 		return model;
-		
 	}
+	
+	*/
 
 	@ModelAttribute("ceo_name")
 	public String com_CEOName(HttpSession session) {

@@ -11,7 +11,7 @@
 function view_resume(num) {
 	var mem_num = num;
 	/* "final_test/mem_resume.do?mem_num=" + mem_num */
-	window.open("mem_resume.do?mem_num=" + mem_num, "", "scrollbars=yes,resizale=no, menubar=no, resizeble=yes, width=500, heigth=400, right=200, botton=200");
+	window.open("mem_resume.do?mem_num=" + mem_num, "", "toolbar=no,location=no,status=no,menubar=no scrollbars=no,resizable=no,left=600, top=20,width=700,height=920");
 }
 
 </script>

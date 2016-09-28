@@ -38,6 +38,8 @@ public class DeptDAO extends SqlSessionDaoSupport {
 		Map map= new HashMap<>();
 		map.put("com_num", com_num);
 		map.put("com_dept_num", com_dept_num);
+		System.out.println(map.get("com_num"));
+		System.out.println(map.get("com_dept_num"));
 		ArrayList mem_List = (ArrayList) getSqlSession().selectList("dept.memList", map);
 		
 		return mem_List;

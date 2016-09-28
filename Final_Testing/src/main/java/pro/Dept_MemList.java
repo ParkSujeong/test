@@ -36,6 +36,10 @@ public class Dept_MemList {
 		List mem_List = new ArrayList<>();
 		mem_List = dao.dept_List(com_num, com_dept_num);
 		
+		for (int i = 0; i < mem_List.size(); i++) {
+			System.out.println("mem_List ::: " + mem_List.get(i));
+		}
+		
 		return mem_List;
 	}
 
