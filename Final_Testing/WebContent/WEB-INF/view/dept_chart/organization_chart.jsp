@@ -39,7 +39,6 @@ tr, td {
 	border-collapse: collapse;
 }
 
-
 .box {
 	background-color: #344d91;
 	color: white;
@@ -126,11 +125,13 @@ tr, td {
 }
 
 #div_up_one {
-	margin-right: 63px
+	margin-right: 63px;
+	margin-left: 2px;
 }
 
 #div_up_two {
 	margin-right: 65x;
+	margin-left: 2px;
 }
 
 #div_no_margin {
@@ -213,36 +214,76 @@ tr, td {
 								<td></td>
 								<td></td>
 							</tr>
+
+
+							<!-- 6 -->
+							<tr class="button_size_one">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<!--  -->
+								<td colspan="3" class="line_on_top"></td>
+								<!--  -->
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+
 						</c:when>
 					</c:choose>
 				</c:forEach>
 
 
-				<!-- 6 -->
-				<tr class="button_size_one">
-					<td></td>
+				<c:if test="${ (dept.key == 1) eq 'null' }">
+					<!-- 5 -->
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<!--  -->
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
 
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<!--  -->
-					<td colspan="3" class="line_on_top"></td>
-					<!--  -->
-					<td></td>
-					<td></td>
-				</tr>
+					<!-- 6 -->
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<!--  -->
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
 
-				<!-- 7 -->
+				 <!-- 7 -->
 				<tr>
 					<td></td>
 					<td></td>
 					<td></td>
+
 					<td></td>
 					<td></td>
 					<td></td>
-					<!--  -->
 					<td></td>
 					<td></td>
 					<td></td>
@@ -347,168 +388,8 @@ tr, td {
 						</c:if>
 					</c:forEach>
 				</div>
-
 			</div>
-
 		</div>
-
-		<%-- 		
-			<div>
-			<c:forEach var="dept" items="${ dept }">
-				<c:if test="${ dept.key gt 1 && dept.key lt 5 }">
-					<!-- 12 -->
-					<tr class="button_size_two">
-						<td colspan="2" class="box_button">${ dept.value }</td>
-						<td></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-				</c:if>
-			</c:forEach>
-		</div>
-
-
-		<div id="one">
-			<c:forEach var="dept" items="${ dept }">
-				<c:if test="${ dept.key gt 4 && dept.key lt 8 }">
-					<!-- 12 -->
-					<tr class="button_size_two">
-						<td colspan="2" class="box_button">${ dept.value }</td>
-						<td></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-				</c:if>
-			</c:forEach>
-		</div>
-
-
-		<div>
-			<c:forEach var="dept" items="${ dept }">
-				<c:if test="${ dept.key gt 7 && dept.key lt 10 }">
-					<!-- 12 -->
-					<tr class="button_size_two">
-						<td colspan="2" class="box_button">${ dept.value }</td>
-						<td></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-				</c:if>
-			</c:forEach>
-		</div>
-
-
-		<div>
-			<c:forEach var="dept" items="${ dept }">
-				<c:if test="${ dept.key gt 9 && dept.key lt 12 }">
-					<!-- 12 -->
-					<tr class="button_size_two">
-						<td colspan="2" class="box_button">${ dept.value }</td>
-						<td></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-				</c:if>
-			</c:forEach>
-		</div>
-
-
-		<div>
-			<c:forEach var="dept" items="${ dept }">
-				<c:if test="${ dept.key ge 11 && dept.key le 15 }">
-					<!-- 12 -->
-					<tr class="button_size_two">
-						<td colspan="2" class="box_button">${ dept.value }</td>
-						<td></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-				</c:if>
-			</c:forEach>
-		</div>
-
-
-		<!-- 13 -->
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-
-
-		<!-- 14 -->
-		<tr class="button_size_two">
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-		</tr>
-
-		<!-- 15 -->
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		-->
-
-		<!-- 16 -->
-		<tr class="button_size_two">
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td colspan="2" class="box_button"></td>
-		</tr>
- --%>
 
 	</div>
 </body>
