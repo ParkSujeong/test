@@ -25,15 +25,15 @@ body {
 table, tr, th, td {
 	margin: 0 auto;
 	border-collapse: collapse;
-	border: 1px solid #fff;
+	border: 1px solid white;
 	cellpadding: 0;
 	cellspacing: 0;
-	font-size: 14px;
-	padding: 8px;
+	font-size: 18px;
+	padding: 10px;
 }
 
 tr, td {
-	border: 1px solid black;
+	border: 1px solid white;
 	text-align: center;
 }
 
@@ -54,24 +54,24 @@ tr, td {
 }
 
 #com_pos_name {
-	width: 50px;
-}
-
-#name {
 	width: 80px;
 }
 
+#name {
+	width: 100px;
+}
+
 #phone_num {
-	width: 130px;
+	width: 170px;
 }
 
 #email {
-	width: 150px;
+	width: 250px;
 }
 </style>
 
 </head>
-<body ondragstart="return false">
+<body onselectstart="return false" ondragstart="return false">
 
 	<table>
 		<tr>
