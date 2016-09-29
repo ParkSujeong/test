@@ -28,7 +28,7 @@ body {
 }
 
 table {
-	width: 880px;
+	width: 930px;
 	border-collapse: collapse;
 	margin: 0 auto;
 }
@@ -116,7 +116,7 @@ tr, td {
 	margin: 0 auto;
 	margin-right: 61px;
 	margin-left: 1.2px;
-	box-sizing: 124px 248px;
+	box-sizing: 120px 248px;
 }
 
 #table {
@@ -125,17 +125,17 @@ tr, td {
 }
 
 #div_up_one {
-	margin-right: 63px;
-	margin-left: 2px;
+	/* margin-right: 63px;
+	margin-left: 2px; */
 }
 
 #div_up_two {
-	margin-right: 65x;
-	margin-left: 2px;
+	/* margin-right: 65x;
+	margin-left: 2px; */
 }
 
 #div_no_margin {
-	margin-left: 6px;
+	/* margin-left: 6px; */
 	margin-right: 0px;
 }
 </style>
@@ -256,7 +256,7 @@ tr, td {
 						<td></td>
 					</tr>
 
-					<!-- 6 -->
+<!-- 					6
 					<tr>
 						<td></td>
 						<td></td>
@@ -264,7 +264,7 @@ tr, td {
 						<td></td>
 						<td></td>
 						<td></td>
-						<!--  -->
+						
 						<td></td>
 						<td></td>
 						<td></td>
@@ -272,10 +272,10 @@ tr, td {
 						<td></td>
 						<td></td>
 						<td></td>
-					</tr>
+					</tr> -->
 				</c:if>
-
-				 <!-- 7 -->
+<!-- 
+				 7
 				<tr>
 					<td></td>
 					<td></td>
@@ -291,7 +291,7 @@ tr, td {
 					<td></td>
 					<td></td>
 					<td></td>
-				</tr>
+				</tr> -->
 
 				<!-- 8 -->
 				<tr>
@@ -335,7 +335,6 @@ tr, td {
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
 				</tr>
 
 			</table>
@@ -347,7 +346,7 @@ tr, td {
 				<div class="div_location">
 					<c:forEach var="dept" items="${ dept }">
 						<c:if test="${ dept.key gt 1 && dept.key lt 5 }">
-							<div class="box_button" class="box_button"
+							<div class="box_button"
 								onclick="chart_click(${ dept.key })">${ dept.value }</div>
 						</c:if>
 					</c:forEach>
@@ -356,7 +355,7 @@ tr, td {
 				<div class="div_location">
 					<c:forEach var="dept" items="${ dept }">
 						<c:if test="${ dept.key gt 4 && dept.key lt 8 }">
-							<div class="box_button" class="box_button"
+							<div class="box_button"
 								onclick="chart_click(${ dept.key })">${ dept.value }</div>
 						</c:if>
 					</c:forEach>
@@ -365,7 +364,7 @@ tr, td {
 				<div class="div_location" id="div_up_one">
 					<c:forEach var="dept" items="${ dept }">
 						<c:if test="${ dept.key gt 7 && dept.key lt 10 }">
-							<div class="box_button" class="box_button"
+							<div class="box_button"
 								onclick="chart_click(${ dept.key })">${ dept.value }</div>
 						</c:if>
 					</c:forEach>
@@ -374,7 +373,7 @@ tr, td {
 				<div class="div_location" id="div_up_two">
 					<c:forEach var="dept" items="${ dept }">
 						<c:if test="${ dept.key gt 9 && dept.key lt 12 }">
-							<div class="box_button" class="box_button"
+							<div class="box_button"
 								onclick="chart_click(${ dept.key })">${ dept.value }</div>
 						</c:if>
 					</c:forEach>
@@ -383,7 +382,7 @@ tr, td {
 				<div class="div_location" id="div_no_margin">
 					<c:forEach var="dept" items="${ dept }">
 						<c:if test="${ dept.key gt 11 && dept.key le 14 }">
-							<div class="box_button" class="box_button"
+							<div class="box_button"
 								onclick="chart_click(${ dept.key })">${ dept.value }</div>
 						</c:if>
 					</c:forEach>
