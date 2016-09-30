@@ -209,11 +209,11 @@ h3 {
 
 
 			<div class="down">
-				<c:if test="${ empty comList }">
+				<c:if test="${ empty search_list }">
 					<br>
 					<p>검색된 결과가 없습니다</p>
 				</c:if>
-				<c:if test="${ !empty comList }">
+				<c:if test="${ !empty search_list }">
 					<br>
 					<p>※ 아래 회사명을 클릭하면 자동으로 입력됩니다</p>
 					<br>
@@ -224,7 +224,7 @@ h3 {
 							<td class="title">Affiliate</td>
 							<td class="title" id="phone">Phone</td>
 						</tr>
-						<c:forEach var="search" items="${ comList }">
+						<c:forEach var="search" items="${ search_list }">
 							<tbody>
 								<tr id="text">
 									<td><a

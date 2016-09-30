@@ -45,6 +45,7 @@
 <script>
 	function searchCheck() {
 
+	
 		if (!document.com_search.com_name.value) {
 			alert("사업장을 선택해주세요");
 			return false;
@@ -55,11 +56,11 @@
 			return false;
 		}
 
-		if (document.com_search.com_pos_name.value == "선택하세요") {
+		if (document.com_search.com_pos_num.value == "선택하세요") {
 			alert("직급을 선택하세요");
 			return false;
-		}
-
+		}	
+		
 		return true;
 
 	}
@@ -80,10 +81,10 @@
 <script>
 	$(document).ready(function() {
 		$("#one").click(function() {
-/* 			$("#one").css("background", "#fff");
-			$("#one").css("color", "black");
-			$("#two").css("background", "#344d91");
-			$("#two").css("color", "white"); */
+			/* 			$("#one").css("background", "#fff");
+			 $("#one").css("color", "black");
+			 $("#two").css("background", "#344d91");
+			 $("#two").css("color", "white"); */
 			$("#company_form").css("display", "block");
 			$("#company_find_form").css("display", "none");
 		});
@@ -95,13 +96,12 @@
 			$("#one").css("background", "#344d91");
 			$("#one").css("color", "#fff");
 		});
-		
-		
+
 		$("#two").mouseenter(function() {
 			$("#two").css("background", "#fff");
 			$("#two").css("color", "black");
 		});
-		
+
 		$("#two").mouseleave(function() {
 			$("#two").css("background", "#344d91");
 			$("#two").css("color", "#fff");
@@ -289,14 +289,13 @@ h3 {
 	font-size: 18px;
 	font-weight: 700;
 }
-
 </style>
 
 </head>
 <body>
 
 	<div id="content">
-	
+
 		<div id="main">
 
 
@@ -310,8 +309,7 @@ h3 {
 
 			<div id="company_contents">
 				<div id="company_form">
-					<form name="com_regi"
-						method="post" action="temp_com.do">
+					<form name="com_regi" method="post" action="temp_com.do">
 						<h3>사업장 등록</h3>
 						<hr class="subject">
 						<input type="text" placeholder="COMPANY NAME" name="com_name"
@@ -325,42 +323,38 @@ h3 {
 							name="com_aff">
 							<option value="선택하세요">선택하세요</option>
 							<c:forEach var="aff_list" items="${ aff_list }">
-							<option value="${ aff_list }">${ aff_list }</option>
+								<option value="${ aff_list }">${ aff_list }</option>
 							</c:forEach>
 						</select>
 						<hr>
 						<br> <br> <a href="javascript:com_regi.submit();"
 							onclick="return inputCheck()" class="submit">등록완료</a>
 						<!-- <input type="submit" value="등록하기" /> -->
-					
-						
+
+
 					</form>
 				</div>
 
 
 				<div id="company_find_form">
-					<form name="com_search" method="post"
-						action="mem_com_update.do">
+					<form name="com_search" method="post" action="mem_com_update.do">
 						<!-- onSubmit="return searchCheck()" -->
 						<h3>내 회사 등록</h3>
 						<hr class="subject">
-						<input type="text" placeholder="COMPANY NAME SEARCH" name="com_name"
-							class="cname" readonly> <img src="/Final_Testing/view/search.png"
-							id="search" value="찾기" onClick="companyCheck();"><br>
-						<input type="hidden" name="com_num" />
-						DEPARTMENT
-						<select name="com_dept_num">
+						<input type="text" placeholder="COMPANY NAME SEARCH"
+							name="com_name" class="cname" readonly> <img
+							src="/Final_Testing/view/search.png" id="search" value="찾기"
+							onClick="companyCheck();"><br> <input type="hidden"
+							name="com_num" /> DEPARTMENT <select name="com_dept_num">
 							<option value="선택하세요">선택하세요</option>
 							<c:forEach var="dept" items="${ dept_map }">
-							<option value="${ dept.key }">${ dept.value }</option>
+								<option value="${dept.key}">${ dept.value }</option>
+								
 							</c:forEach>
-						</select>
-						<br>
-						POSITION
-						<select name="com_pos_num">
+						</select> <br> POSITION <select name="com_pos_num">
 							<option value="선택하세요">선택하세요</option>
 							<c:forEach var="pos" items="${ pos_map }">
-							<option value="${ pos.key }">${ pos.value }</option>
+								<option value="${ pos.key }">${ pos.value }</option>
 							</c:forEach>
 						</select>
 						<hr>

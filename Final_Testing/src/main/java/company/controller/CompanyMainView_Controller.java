@@ -96,24 +96,32 @@ public class CompanyMainView_Controller {
 		
 		temp.setCom_phone(temp.getCom_phone1() + temp.getCom_phone2() + temp.getCom_phone3());
 		int x = dao.temp_Insert(temp);
-		System.out.println("x::::" + x);
 		int mem_num = Integer.parseInt((String) request.getAttribute("mem_num"));
 		String com_name = temp.getCom_name();
-		System.out.println("mem_num:::" + mem_num);
-		System.out.println("1");
 		int y = dao.temp_ceo_Update(com_name, mem_num);
 
-		return "company_Temp_Join";
+		return "wait_accept_company";
 
 	}
 	
 	@RequestMapping(value = "/mem_com_update.do" , method = RequestMethod.POST)
-	public String mem_Comapny_Submit(@ModelAttribute MembersDTO mem) {
+	public String mem_Comapny_Submit(@ModelAttribute MembersDTO mem, HttpSession session) {
+		int mem_num = Integer.parseInt((String) session.getAttribute("mem_num"));
 		
-		System.out.println(mem.toString());
+		Map dept_map = deptMap();
+		Map pos_map = posMap();
+		String com_dept_name = (String) dept_map.get(mem.getCom_dept_num());
+		String com_pos_name = (String) pos_map.get(mem.getCom_pos_num());
 		
+		mem.setMem_num(mem_num);
+		mem.setCom_dept_name(com_dept_name);
+		mem.setCom_pos_name(com_pos_name);
 		
-		return "company_Temp_Join";
+		System.out.println("Members:::" + mem);
+		
+		int x = dao.mem_ComData_Update(mem);
+		
+		return "wait_accept_company";
 	}
 
 }

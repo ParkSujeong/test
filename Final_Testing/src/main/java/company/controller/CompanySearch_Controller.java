@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import company.db.CompanyDAO;
 
@@ -22,14 +24,15 @@ public class CompanySearch_Controller {
 		return "companyCheck";
 	}
 
-	@RequestMapping("/com_search.do")
-	public List search_Com() {
+	@RequestMapping("/company_search.do")
+	public ModelAndView search_Com(@RequestParam String com_name) {
+		// 검색창에 회사명 입력시 실행
 
-		List search_list = new ArrayList<>();
-		
-		
-		
-		return search_list;
+		List search_list = dao.searchCom(com_name);
+
+		ModelAndView mav = new ModelAndView("companyCheck", "search_list", search_list);
+
+		return mav;
 
 	}
 

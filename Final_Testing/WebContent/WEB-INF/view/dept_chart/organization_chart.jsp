@@ -31,10 +31,7 @@ table {
 	/* width: 930px; */
 	border-collapse: collapse;
 	margin: 0 auto;
-}
-
-#div_px {
-	box-sizing:;
+	margin-bottom: 20px;
 }
 
 tr, td {
@@ -68,7 +65,7 @@ tr, td {
 	color: #23282D;
 	font-weight: bold;
 	text-align: center;
-	border: 2px solid #344d91;
+	border: 2px solid white;
 	cursor: pointer;
 	line-height: 38px;
 	width: 89px;
@@ -77,7 +74,8 @@ tr, td {
 }
 
 .box_button:HOVER {
-	background-color: #B0CEEB;
+	border: 2px solid #344d91;
+	background-color: #CECACA;
 }
 
 .line_no_bottom1 {
@@ -113,7 +111,7 @@ tr, td {
 #div_center {
 	margin: 0 auto;
 	text-align: center;
-	width: 652px;
+	width: 655px;
 	height: 195px;
 }
 
@@ -135,7 +133,7 @@ tr, td {
 }
 
 #div_up_2 {
-margin-right: 46.5px;
+	margin-right: 46.5px;
 }
 
 #div_up_3 {
@@ -227,6 +225,7 @@ margin-right: 46.5px;
 									<td></td>
 								</tr>
 							</c:when>
+							<c:otherwise></c:otherwise>
 						</c:choose>
 					</c:forEach>
 
@@ -245,6 +244,7 @@ margin-right: 46.5px;
 								<c:when test="${ dept.key == 1 }">
 									<td colspan="3" class="line_on_top"></td>
 								</c:when>
+								<c:otherwise></c:otherwise>
 							</c:choose>
 						</c:forEach>
 						<c:if test="${ empty (dept.key==1) }">
@@ -259,7 +259,6 @@ margin-right: 46.5px;
 
 
 					<c:if test="${ empty (dept.key==1) }">
-
 						<!-- 5 -->
 						<tr>
 							<td></td>
@@ -344,22 +343,6 @@ margin-right: 46.5px;
 					<tr>
 					</tr>
 
-					<!-- 11 -->
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
 
 				</table>
 			</div>
