@@ -11,7 +11,7 @@
 function view_resume(num) {
 	var mem_num = num;
 	/* "final_test/mem_resume.do?mem_num=" + mem_num */
-	window.open("mem_resume.do?mem_num=" + mem_num, "", "toolbar=no,location=no,status=no,menubar=no scrollbars=no,resizable=no,left=600, top=20,width=700,height=920");
+	window.open("/Final_Testing/option/mem_resume?mem_num=" + mem_num, "", "toolbar=no,location=no,status=no,menubar=no scrollbars=no,resizable=no,left=600, top=20,width=700,height=920");
 }
 
 </script>
@@ -28,7 +28,7 @@ table, tr, th, td {
 	border: 1px solid white;
 	cellpadding: 0;
 	cellspacing: 0;
-	font-size: 18px;
+	font-size: 16px;
 	padding: 10px;
 }
 
@@ -54,7 +54,7 @@ tr, td {
 }
 
 #com_pos_name {
-	width: 80px;
+	width: 70px;
 }
 
 #name {
@@ -62,11 +62,11 @@ tr, td {
 }
 
 #phone_num {
-	width: 170px;
+	width: 130px;
 }
 
 #email {
-	width: 250px;
+	width: 210px;
 }
 </style>
 

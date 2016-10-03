@@ -196,7 +196,7 @@ h3 {
 
 			<div class="down">
 				<form name="comSearch" method="post"
-					action="company_search.do"
+					action="/Final_Testing/company/company_search"
 					onsubmit="return comCheck()">
 					<h3>사업장 검색</h3>
 					<hr class="subject">
@@ -228,7 +228,7 @@ h3 {
 							<tbody>
 								<tr id="text">
 									<td><a
-										href="javascript:send_com_name('${search.com_name}','${search.com_num}' )"
+										href="javascript:send_com_name('${search.com_name}','${search.com_num}')"
 										id="com_name"> ${search.com_name} </a></td>
 									<td id="com_add">${search.com_add}</td>
 									<td>${search.com_aff}</td>

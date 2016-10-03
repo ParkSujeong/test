@@ -11,7 +11,7 @@ function chart_click(num) {
 	
 	var com_dept_num = num;
 
-	location.href="dept_memList.do?com_dept_num=" + com_dept_num;
+	location.href="/Final_Testing/option/dept_memList?com_dept_num=" + com_dept_num;
 	
 }
 

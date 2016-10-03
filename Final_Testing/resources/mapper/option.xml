@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="option">
+
+	<select id="accept_select" parameterType="int" resultType="company.db.MembersDTO">
+		select * from members where com_num=#{com_num}
+	</select>
+
+	<select id="accept_count" parameterType="int" resultType="int">
+		select
+		count(*) from members where com_num=#{com_num}
+	</select>
+
+	<select id="select" parameterType="int" resultType="option.db.DeptDTO">
+		select
+		distinct com_dept_num, com_dept_name from members where
+		com_num=#{com_num} order by com_dept_num
+	</select>
+
+	<select id="ceoName" parameterType="int" resultType="String">
+		select name
+		from members where com_num=#{com_num} and com_pos_num=1
+	</select>
+
+	<select id="memList" parameterType="Map"
+		resultType="option.db.Dept_Person_InfoDataBean">
+		select com_pos_name, name, mem_num, phone_num, email from
+		members where com_dept_num=#{com_dept_num} and com_num=#{com_num}
+		order by com_pos_num
+	</select>
+
+	<!-- !!! -->
+	<update id="com_update_member" parameterType="Map">
+		update members set
+		com_num=#{com_num} where mem_num=#{mem_num}
+	</update>
+
+	<!-- !!! -->
+	<update id="passwd_change" parameterType="Map">
+		update members set
+		passwd=#{passwd} where mem_num=#{mem_num}
+	</update>
+
+	<!-- !!! -->
+	<update id="profile_change" parameterType="Map">
+		update members set profile_img=#{profile_img} where mem_num=#{mem_num}
+	</update>
+
+	<!-- !!! -->
+	<delete id="com_delete_member" parameterType="int">
+		delete from members
+		where mem_num=#{mem_num}
+	</delete>
+
+</mapper>

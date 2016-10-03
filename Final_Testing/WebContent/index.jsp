@@ -14,9 +14,7 @@ request.getSession().setAttribute("com_name", "naver");
 </head>
 <body>
 
-	<a href="final_test/chart.do">/final_test/chart.do</a>
-	<br />
-	<a href="company/companyForm.do">/company/companyForm.do</a>
+	<a href="option/chart">/option/chart</a>
 	<br />
 
 </body>

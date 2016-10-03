@@ -6,23 +6,19 @@
 
 <%
 
-request.getSession().setAttribute("mem_num", "1102");
-request.getSession().setAttribute("name", "user112");
-request.getSession().setAttribute("email", "user112@naver.com");
+request.getSession().setAttribute("mem_num", "1053");
+request.getSession().setAttribute("name", "user53");
+request.getSession().setAttribute("email", "user53@naver.com");
 request.getSession().setAttribute("passwd", "1");
-request.getSession().setAttribute("phone_num", "110004");
+request.getSession().setAttribute("phone_num", "1011111111");
 
 %>
 
 </head>
 <body>
 
-	<a href="final_test/chart.do">/final_test/chart.do
-	</a>
+	<a href="company/companyForm">/company/companyForm</a>
 	<br />
-	<a href="company/companyForm.do">/company/companyForm.do</a>
-	<br />
-	
 
 </body>
 </html>

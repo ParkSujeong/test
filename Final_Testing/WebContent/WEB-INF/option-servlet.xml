@@ -13,7 +13,7 @@
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/dept_chart/" />
+		<property name="prefix" value="/WEB-INF/view/option/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
@@ -35,6 +35,43 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
+
+
+
+	<!-- option main -->
+	<bean class="option.controller.Option_Controller" />
+
+
+
+
+	<!-- accept member -->
+	<bean id="acceptDAO" class="option.db.AcceptDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="Accept_Controller" class="option.controller.Accept_Controller" p:dao-ref="acceptDAO" />
+
+
+
+
+	<!-- dept_chart -->
+	<bean id="deptDAO" class="option.db.DeptDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="Dept_Controller" class="option.controller.Dept_Controller"
+		p:dao-ref="deptDAO" />
+
+	<bean id="Dept_MemList" class="option.controller.Dept_MemList_Controller"
+		p:dao-ref="deptDAO" />
+
+	<bean id="Dept_Member_Data" class="option.controller.Dept_MemResume_Controller"
+		p:dao-ref="deptDAO" />
+		
+		
+		
+	<!-- MyPage -->
+	<bean class="option.controller.MyPage_Controller" />
 
 
 </beans>

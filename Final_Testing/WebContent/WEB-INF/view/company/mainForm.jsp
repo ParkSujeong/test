@@ -45,7 +45,6 @@
 <script>
 	function searchCheck() {
 
-	
 		if (!document.com_search.com_name.value) {
 			alert("사업장을 선택해주세요");
 			return false;
@@ -59,15 +58,15 @@
 		if (document.com_search.com_pos_num.value == "선택하세요") {
 			alert("직급을 선택하세요");
 			return false;
-		}	
-		
+		}
+
 		return true;
 
 	}
 
 	function companyCheck() {
 
-		url = "com_searchForm.do";
+		url = "/Final_Testing/company/com_searchForm";
 
 		window
 				.open(
@@ -309,7 +308,8 @@ h3 {
 
 			<div id="company_contents">
 				<div id="company_form">
-					<form name="com_regi" method="post" action="temp_com.do">
+					<form name="com_regi" method="post"
+						action="/Final_Testing/company/temp_com">
 						<h3>사업장 등록</h3>
 						<hr class="subject">
 						<input type="text" placeholder="COMPANY NAME" name="com_name"
@@ -330,14 +330,13 @@ h3 {
 						<br> <br> <a href="javascript:com_regi.submit();"
 							onclick="return inputCheck()" class="submit">등록완료</a>
 						<!-- <input type="submit" value="등록하기" /> -->
-
-
 					</form>
 				</div>
 
 
 				<div id="company_find_form">
-					<form name="com_search" method="post" action="mem_com_update.do">
+					<form name="com_search" method="post"
+						action="/Final_Testing/company/mem_com_update">
 						<!-- onSubmit="return searchCheck()" -->
 						<h3>내 회사 등록</h3>
 						<hr class="subject">
@@ -349,7 +348,7 @@ h3 {
 							<option value="선택하세요">선택하세요</option>
 							<c:forEach var="dept" items="${ dept_map }">
 								<option value="${dept.key}">${ dept.value }</option>
-								
+
 							</c:forEach>
 						</select> <br> POSITION <select name="com_pos_num">
 							<option value="선택하세요">선택하세요</option>
