@@ -30,6 +30,31 @@
 		order by com_pos_num
 	</select>
 
+	<select id="base_select" parameterType="int" resultType="company.db.MembersDTO">
+		select *
+		from members where mem_num=#{mem_num}
+	</select>
+
+	<select id="school_select" parameterType="int" resultType="option.db.Mem_School">
+		select * from mem_school where mem_num=#{mem_num}
+	</select>
+
+	<select id="edu_select" parameterType="int" resultType="option.db.Mem_Edu">
+		select * from mem_edu where mem_num=#{mem_num}
+	</select>
+
+	<select id="certi_select" parameterType="int" resultType="option.db.Mem_Certi">
+		select * from mem_certi where mem_num=#{mem_num}
+	</select>
+
+	<select id="mili_select" parameterType="int" resultType="option.db.Mem_Mili">
+		select * from mem_mili where mem_num=#{mem_num}
+	</select>
+
+	<select id="career_select" parameterType="int" resultType="option.db.Mem_Career">
+		select * from mem_career where mem_num=#{mem_num}
+	</select>
+
 	<!-- !!! -->
 	<update id="com_update_member" parameterType="Map">
 		update members set
@@ -44,7 +69,8 @@
 
 	<!-- !!! -->
 	<update id="profile_change" parameterType="Map">
-		update members set profile_img=#{profile_img} where mem_num=#{mem_num}
+		update members set
+		profile_img=#{profile_img} where mem_num=#{mem_num}
 	</update>
 
 	<!-- !!! -->

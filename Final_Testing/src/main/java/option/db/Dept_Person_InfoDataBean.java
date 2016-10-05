@@ -1,4 +1,4 @@
-package pro;
+package option.db;
 
 public class Dept_Person_InfoDataBean {
 	private String com_pos_name;

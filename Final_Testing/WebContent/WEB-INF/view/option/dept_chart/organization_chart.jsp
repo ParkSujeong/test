@@ -47,17 +47,17 @@ tr, td {
 .box {
 	background-color: #344d91;
 	color: white;
-	/* font-weight: bold; */
 	margin: auto;
 	text-align: center;
+	font-size: 14px;
 }
 
 .box_CEO {
 	background-color: #344d91;
 	color: white;
-	/* font-weight: bold; */
 	margin: auto;
 	text-align: center;
+	font-size: 14px;
 }
 
 .box_button {
@@ -71,6 +71,7 @@ tr, td {
 	width: 89px;
 	height: 38px;
 	margin-bottom: 20px;
+	font-size: 14px;
 }
 
 .box_button:HOVER {

@@ -1,4 +1,4 @@
-package pro;
+package option.controller;
 
 import java.util.Map;
 
@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import option.db.DeptDAO;
+
 @Controller
 public class Dept_Controller {
 
@@ -19,10 +21,10 @@ public class Dept_Controller {
 		this.dao = dao;
 	}
 
-	@RequestMapping("/chart.do")
+	@RequestMapping("/chart")
 	public String dept_Main_View() {
 
-		return "organization_chart";
+		return "dept_chart/organization_chart";
 	}
 
 	@ModelAttribute("dept")
@@ -34,21 +36,6 @@ public class Dept_Controller {
 
 		return dept_map;
 	}
-	
-/*	
-	@ModelAttribute
-	public static Model sessionSetting(Model model, HttpSession session) {
-		// session 임의 등록
-		
-		model.addAttribute("com_num", 100);
-		model.addAttribute("com_name", "naver");
-		session.setAttribute("com_num", 100);
-		session.setAttribute("com_name", "naver");
-		
-		return model;
-	}
-	
-	*/
 
 	@ModelAttribute("ceo_name")
 	public String com_CEOName(HttpSession session) {

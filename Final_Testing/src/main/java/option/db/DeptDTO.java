@@ -1,4 +1,4 @@
-package pro;
+package option.db;
 
 public class DeptDTO {
 

@@ -39,7 +39,7 @@
 
 
 	<!-- option main -->
-	<bean class="option.controller.Option_Controller" />
+	<bean class="option.controller.Option_Controller" /> 
 
 
 

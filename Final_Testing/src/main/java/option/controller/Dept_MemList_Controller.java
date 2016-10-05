@@ -1,4 +1,4 @@
-package pro;
+package option.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import option.db.DeptDAO;
+
 @Controller
-@RequestMapping("/dept_memList.do")
-public class Dept_MemList {
+@RequestMapping("/dept_memList")
+public class Dept_MemList_Controller {
 	
 	private DeptDAO dao;
 	
@@ -26,7 +28,7 @@ public class Dept_MemList {
 	public String dept_ListView() {
 		
 		
-		return "dept_mem_list";
+		return "dept_chart/dept_mem_list";
 	}
 
 	@ModelAttribute("dept_List")
@@ -35,10 +37,6 @@ public class Dept_MemList {
 		int com_num = (int) session.getAttribute("com_num");
 		List mem_List = new ArrayList<>();
 		mem_List = dao.dept_List(com_num, com_dept_num);
-		
-		for (int i = 0; i < mem_List.size(); i++) {
-			System.out.println("mem_List ::: " + mem_List.get(i));
-		}
 		
 		return mem_List;
 	}

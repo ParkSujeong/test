@@ -13,9 +13,34 @@ public class MembersDTO {
 	private String com_dept_name;
 	private int com_pos_num;
 	private String com_pos_name;
+	private String birth_date;
+	private String mem_address;
+	private String gender;
 
-	public MembersDTO(){}
-	
+	public MembersDTO() {
+		super();
+	}
+
+	public MembersDTO(int mem_num, String name, String email, String passwd, String phone_num, int com_num,
+			String com_name, int com_dept_num, String com_dept_name, int com_pos_num, String com_pos_name,
+			String birth_date, String mem_address, String gender) {
+		super();
+		this.mem_num = mem_num;
+		this.name = name;
+		this.email = email;
+		this.passwd = passwd;
+		this.phone_num = phone_num;
+		this.com_num = com_num;
+		this.com_name = com_name;
+		this.com_dept_num = com_dept_num;
+		this.com_dept_name = com_dept_name;
+		this.com_pos_num = com_pos_num;
+		this.com_pos_name = com_pos_name;
+		this.birth_date = birth_date;
+		this.mem_address = mem_address;
+		this.gender = gender;
+	}
+
 	public MembersDTO(int mem_num, String name, String email, String passwd, String phone_num, int com_num,
 			String com_name, int com_dept_num, String com_dept_name, int com_pos_num, String com_pos_name) {
 		super();
@@ -31,8 +56,9 @@ public class MembersDTO {
 		this.com_pos_num = com_pos_num;
 		this.com_pos_name = com_pos_name;
 	}
-	
-	public MembersDTO(int com_num, String com_name, int com_dept_num, String com_dept_name, int com_pos_num, String com_pos_name) {
+
+	public MembersDTO(int com_num, String com_name, int com_dept_num, String com_dept_name, int com_pos_num,
+			String com_pos_name) {
 		super();
 		this.com_num = com_num;
 		this.com_name = com_name;
@@ -47,7 +73,8 @@ public class MembersDTO {
 		return "MembersDTO [mem_num=" + mem_num + ", name=" + name + ", email=" + email + ", passwd=" + passwd
 				+ ", phone_num=" + phone_num + ", com_num=" + com_num + ", com_name=" + com_name + ", com_dept_num="
 				+ com_dept_num + ", com_dept_name=" + com_dept_name + ", com_pos_num=" + com_pos_num + ", com_pos_name="
-				+ com_pos_name + "]";
+				+ com_pos_name + ", birth_date=" + birth_date + ", mem_address=" + mem_address + ", gender=" + gender
+				+ "]";
 	}
 
 	public int getMem_num() {
@@ -136,6 +163,30 @@ public class MembersDTO {
 
 	public void setCom_pos_name(String com_pos_name) {
 		this.com_pos_name = com_pos_name;
+	}
+
+	public String getBirth_date() {
+		return birth_date;
+	}
+
+	public void setBirth_date(String birth_date) {
+		this.birth_date = birth_date;
+	}
+
+	public String getMem_address() {
+		return mem_address;
+	}
+
+	public void setMem_address(String mem_address) {
+		this.mem_address = mem_address;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 }

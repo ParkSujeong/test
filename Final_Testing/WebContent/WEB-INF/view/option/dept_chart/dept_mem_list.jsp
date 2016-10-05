@@ -8,8 +8,8 @@
 
 <script>
 
-function view_resume(num) {
-	var mem_num = num;
+function view_resume(mem_num) {
+
 	/* "final_test/mem_resume.do?mem_num=" + mem_num */
 	window.open("/Final_Testing/option/mem_resume?mem_num=" + mem_num, "", "toolbar=no,location=no,status=no,menubar=no scrollbars=no,resizable=no,left=600, top=20,width=700,height=920");
 }
@@ -28,7 +28,7 @@ table, tr, th, td {
 	border: 1px solid white;
 	cellpadding: 0;
 	cellspacing: 0;
-	font-size: 16px;
+	font-size: 14px;
 	padding: 10px;
 }
 
