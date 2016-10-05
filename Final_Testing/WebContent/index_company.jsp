@@ -17,7 +17,7 @@ request.getSession().setAttribute("phone_num", "1011111111");
 </head>
 <body>
 
-	<a href="company/companyForm">/company/companyForm</a>
+	<a href="/Final_Testing/company/companyForm">/company/companyForm</a>
 	<br />
 
 </body>

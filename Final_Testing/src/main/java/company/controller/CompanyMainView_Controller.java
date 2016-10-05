@@ -29,7 +29,7 @@ public class CompanyMainView_Controller {
 		this.dao = dao;
 	}
 
-	@RequestMapping("/companyForm.do")
+	@RequestMapping("/companyForm")
 	public String mainView() {
 		return "mainForm";
 	}

@@ -116,7 +116,7 @@ table td {
 <body>
 
 			<form align="center" name="pwChange" method="post"
-				action="/final_Testing/option/passwd_ch"
+				action="/final_Testing/option/passwd_ch_view"
 				onsubmit="return PW_Same()">
 				<h1 id="title">Change Password</h1>
 				<hr>
@@ -126,11 +126,11 @@ table td {
 						<td><input width="100" height="50" type="password" id="pw"
 							placeholder="PASSWORD"></td>
 						<td><input type="button" class="button"
-							onclick="return PW_Check('${passwd}')" value='Check'></td>
+							onclick="return PW_Check('${passwd}')" value="Check"></td>
 					</tr>
 					<tr>
 						<td>변경 비밀번호</td>
-						<td><input type="password" id="newpw1" name='newpw1'></td>
+						<td><input type="password" id="newpw1" name="newpw1"></td>
 					</tr>
 					<tr>
 						<td>변경 비밀번호 확인</td>
@@ -140,8 +140,8 @@ table td {
 				</table>
 				<br>
 				<div class="che">
-					<input type="button" value="닫기" class="button" id="close"
-						onclick="window.close()">
+					<input type="button" value="뒤로가기" class="button" id="close"
+						onclick="javascipt:location.href='/Final_Testing/option/mypage'">
 				</div>
 			</form>
 

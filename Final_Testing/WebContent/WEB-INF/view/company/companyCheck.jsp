@@ -9,7 +9,7 @@
 	function in_focus() {
 		document.comSearch.com_name.focus();
 	}
-	
+
 	function comCheck() {
 		if (document.comSearch.com_name.value == "") {
 			alert("검색할 사업장명을 입력하세요");
@@ -173,8 +173,15 @@ h3 {
 }
 
 #search {
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
+	top: 7px;
+}
+
+#search:HOVER {
+	background: url(/Final_Testing/resources/images/search_two.png)
+		no-repeat;
+	background-size: 25px;
 }
 
 #com_name {
@@ -200,8 +207,11 @@ h3 {
 					onsubmit="return comCheck()">
 					<h3>사업장 검색</h3>
 					<hr class="subject">
-					<input type="text" name="com_name" placeholder="COMPANY NAME SEARCH" class="s">
-					<input type="image" value="찾기" src="/Final_Testing/view/search.png" id="search" class="s">
+					<input type="text" name="com_name"
+						placeholder="COMPANY NAME SEARCH" class="s"> <input
+						type="image" value="찾기"
+						src="/Final_Testing/resources/images/search_one.png" id="search"
+						class="s">
 					<!-- <table width="300" border="1" cellspacing="0" cellpadding="3"
 				align="center"> -->
 				</form>

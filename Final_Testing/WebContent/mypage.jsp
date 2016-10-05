@@ -32,12 +32,11 @@
 	function file_extension(form) {
 		// img파일인지 확인
 
-		
 		alert(input);
 		return false;
 		/* var check = document.profile_img_upload.file_route.value; // check : 파일명
 		var extension = check.substr(check.length - 3); // 확장자
-	alert(check);
+		alert(check);
 		if (!(extension == 'png' || extension == 'bmp' || extension == 'gif' || extension == 'jpg')) {
 			// 사진파일이 아닐때
 			alert("사진 파일만 선택해주세요\n * png, bmp, gif, jpg \n");
@@ -51,14 +50,15 @@
 			return false;
 		}
 		return false; */
-	}var input;
+	}
+	var input;
 
 	$(document).ready(function() {
 		$('.file_wrap').click(function() {
 
 			$('#profile_img').click();
 		});
-		
+
 		$('#profile_img').change(function() {
 			input = $(this).val();
 			var input_value = input.replace("C:\\fakepath\\", "");
@@ -129,7 +129,7 @@ table, tr, th, td {
 /* file */
 #div_file_search {
 	float: right;
-	margin : 0 auto;
+	margin: 0 auto;
 	margin-top: 40px;
 	padding: 5px;
 	border: 1px solid #bbb;
@@ -152,6 +152,7 @@ table, tr, th, td {
 		no-repeat;
 	background-size: 30px;
 	border: 1px solid #bbb;
+	cursor: pointer;
 }
 
 .file_wrap:HOVER {
@@ -191,46 +192,58 @@ table, tr, th, td {
 /* table */
 
 /* function */
-#functions {
-	width: 350px;
-	height: 120px;
-	border: 1px solid #bbb;
+#div_func {
 	margin: 0 auto;
-	margin-top: 30px;
+	margin-top: 10px;
+	width: 400px;
+	height: 185px;
+	border-top: 3px solid #bbb;
+	border-bottom: 3px solid #bbb;
 }
 
-#passwd_ch, #account_drop {
-	width: 100px;
-	height: 120px;
-	float: left;
-	border: 1px solid #bbb;
-	text-align: center;
+.functions {
+	width: 400px;
+	height: 60px;
+	margin: 0 auto;
 }
 
-#resume_ch {
-	width: 100px;
-	height: 120px;
+.div_text {
+	width: 320px;
+	height: 50px;
 	float: left;
-	border: 1px solid #bbb;
-	margin-left: 22px;
-	margin-right: 22px;
+	padding-left: 15px;
+	text-align: left;
+	top: 40px;
+	line-height: 25px;
+}
+
+#passwd_ch, #account_drop, #resume_ch {
+	width: 60px;
+	height: 40px;
+	float: right;
 	text-align: center;
+	margin-top: 10px;
+}
+
+#div_line {
+	border-top: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
 }
 /* function */
 
 /* image */
 a#pw {
 	display: block;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	background: url(/Final_Testing/resources/images/pw_one.png) no-repeat;
-	background-size: 50px;
+	background-size: 40px;
 	margin: 0 auto;
 }
 
 a:HOVER#pw {
 	background: url(/Final_Testing/resources/images/pw_two.png) no-repeat;
-	background-size: 50px;
+	background-size: 40px;
 }
 
 a#pw span {
@@ -239,18 +252,18 @@ a#pw span {
 
 a#resume {
 	display: block;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	background: url(/Final_Testing/resources/images/resume_one.png)
 		no-repeat;
-	background-size: 50px;
+	background-size: 40px;
 	margin: 0 auto;
 }
 
 a:HOVER#resume {
 	background: url(/Final_Testing/resources/images/resume_two.png)
 		no-repeat;
-	background-size: 50px;
+	background-size: 40px;
 }
 
 a#resume span {
@@ -259,18 +272,18 @@ a#resume span {
 
 a#account {
 	display: block;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	background: url(/Final_Testing/resources/images/account_one.png)
 		no-repeat;
-	background-size: 50px;
+	background-size: 40px;
 	margin: 0 auto;
 }
 
 a:HOVER#account {
 	background: url(/Final_Testing/resources/images/account_two.png)
 		no-repeat;
-	background-size: 50px;
+	background-size: 40px;
 }
 
 a#account span {
@@ -328,10 +341,11 @@ a#account span {
 				onsubmit="return file_extension(this);">
 				<div id="div_file">
 					<div id="div_file_search">
-						<input type="text" id="file_route" name="file_route" class="file_text"  readonly />
-						<span class="file_wrap"> </span> <input type="file" value="선택"
-							name="profile_img" id="profile_img" class="file_hidden" /> <input
-							type="submit" value="Upload" class="button" />
+						<input type="text" id="file_route" name="file_route"
+							class="file_text" readonly /> <span class="file_wrap"> </span> <input
+							type="file" value="선택" name="profile_img" id="profile_img"
+							class="file_hidden" /> <input type="submit" value="Upload"
+							class="button" />
 					</div>
 				</div>
 			</form>
@@ -370,21 +384,39 @@ a#account span {
 		</table>
 	</div>
 
-	<div id="functions">
+	<div id="div_func">
 
-		<div id="passwd_ch">
-			<a href="/Final_Testing/option/passwd_ch_view" id="pw"><span>pwChange</span></a><label>pw
-				변경</label>
+		<div class="functions">
+			<div class="div_text">
+				<p>현재 비밀번호를 변경할 수 있습니다</p>
+			</div>
+			<div id="passwd_ch">
+				<a href="/Final_Testing/option/passwd_ch_view" id="pw"><span>pwChange</span></a>
+			</div>
+
 		</div>
-		<div id="resume_ch">
-			<a href="/Final_Testing/option/mem_resume" id="resume"><span>resumeView</span></a><label>이력서
-				조회</label>
+
+		<div class="functions" id="div_line">
+			<div class="div_text">
+				<p>이력서를 조회 및 수정할 수 있습니다</p>
+			</div>
+			<div id="resume_ch">
+				<a href="/Final_Testing/option/mem_resume" id="resume"><span>resumeView</span></a>
+			</div>
+
 		</div>
-		<div id="account_drop">
-			<a href="/Final_Testing/option/mem_resume" id="account"><span>accountDrop</span></a><label>계정
-				삭제</label>
+
+		<div class="functions">
+			<div class="div_text">
+				<p>계정을 삭제할 수 있습니다</p>
+			</div>
+			<div id="account_drop">
+				<a href="/Final_Testing/option/mem_resume" id="account"><span>accountDrop</span></a>
+			</div>
+
 		</div>
 
 	</div>
+
 </body>
 </html>

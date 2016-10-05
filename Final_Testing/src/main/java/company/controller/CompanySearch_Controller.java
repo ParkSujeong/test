@@ -19,12 +19,12 @@ public class CompanySearch_Controller {
 		this.dao = dao;
 	}
 
-	@RequestMapping("/com_searchForm.do")
+	@RequestMapping("/com_searchForm")
 	public String search_View() {
 		return "companyCheck";
 	}
 
-	@RequestMapping("/company_search.do")
+	@RequestMapping("/company_search")
 	public ModelAndView search_Com(@RequestParam String com_name) {
 		// 검색창에 회사명 입력시 실행
 

@@ -216,6 +216,48 @@ input[type=radio].ch {
 	cursor: pointer;
 }
 
+#search_map {
+	width: 450px;
+	height: 50px;
+}
+
+#div_text {
+	float: left;
+	width: 365px;
+	height: 50px;
+	margin-left: 22px;
+}
+
+.search {
+	top: 4px;
+	float: right;
+	margin-right: 33px;
+	margin-top: 15px;
+}
+
+a.search {
+	display: inline-block;
+	width: 25px;
+	height: 30px;
+	background: url(/Final_Testing/resources/images/search_one.png)
+		no-repeat;
+	background-size: 25px;
+}
+
+a:HOVER.search {
+	background: url(/Final_Testing/resources/images/search_two.png)
+		no-repeat;
+	background-size: 25px;
+}
+
+a:HOVER.search #div_search {
+	border: 2px solid black;
+}
+
+a.search span {
+	display: none;
+}
+
 .submit {
 	background-color: #4367b0;
 	-moz-border-radius: 5px;
@@ -333,6 +375,7 @@ h3 {
 					</form>
 				</div>
 
+				<!-- <img src="/Final_Testing/view/search.png" id="search" value="찾기" onClick="companyCheck();"> -->
 
 				<div id="company_find_form">
 					<form name="com_search" method="post"
@@ -340,11 +383,15 @@ h3 {
 						<!-- onSubmit="return searchCheck()" -->
 						<h3>내 회사 등록</h3>
 						<hr class="subject">
-						<input type="text" placeholder="COMPANY NAME SEARCH"
-							name="com_name" class="cname" readonly> <img
-							src="/Final_Testing/view/search.png" id="search" value="찾기"
-							onClick="companyCheck();"><br> <input type="hidden"
-							name="com_num" /> DEPARTMENT <select name="com_dept_num">
+						<div id="search_map">
+							<div id="div_text"><input type="text" placeholder="COMPANY NAME SEARCH"
+								name="com_name" class="cname" readonly></div> <a
+								href="#companyCheck" onclick="companyCheck();return false;"
+								onkeypress="this.onclick" class="search"><span>search</span></a>
+						</div>
+
+						<br> <input type="hidden" name="com_num" /> DEPARTMENT <select
+							name="com_dept_num">
 							<option value="선택하세요">선택하세요</option>
 							<c:forEach var="dept" items="${ dept_map }">
 								<option value="${dept.key}">${ dept.value }</option>
