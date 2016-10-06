@@ -50,19 +50,23 @@ public class Accept_Controller {
 	}
 	
 	@RequestMapping("/update_member")
-	public void com_Up_Member(@RequestParam int mem_num, HttpSession session) {
+	public String com_Up_Member(@RequestParam int mem_num, HttpSession session) {
 		// member 승인
 		
 		int com_num = (int) session.getAttribute("com_num");
 		
 		dao.com_In_Member(mem_num, com_num);
+		
+		return "/mem_accept/com_mem_accept";
 	}
 	
 	@RequestMapping("/delete_member")
-	public void com_Del_Member(@RequestParam int mem_num) {
+	public String com_Del_Member(@RequestParam int mem_num) {
 		// member 거절
 		
 		dao.com_Out_Member(mem_num);
+		
+		return "/mem_accept/com_mem_accept";
 	}
 
 }

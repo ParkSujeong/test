@@ -82,16 +82,15 @@ input[type=password] {
 	padding-left: 10px;
 	text-align: lift;
 	margin-top: 5px;
-}
-
-#title {
-	font-size: 25px;
+	margin-left: 15px;
 }
 
 hr {
-	width: 300px;
+	width: 200px;
 	border-top: 1px solid #bbb;
 	border-bottom: 1px solid #bbb;
+	margin-top: -10px;
+	margin-bottom: 30px;
 }
 
 .che {
@@ -111,34 +110,39 @@ table td {
 	margin: 0 auto;
 	text-align: center;
 }
+
+.pw_text {
+	text-align: right;
+}
 </style>
 </head>
 <body>
 
 			<form align="center" name="pwChange" method="post"
-				action="/final_Testing/option/passwd_ch_view"
+				action="/Final_Testing/option/passwd_ch_view"
 				onsubmit="return PW_Same()">
-				<h1 id="title">Change Password</h1>
+				<h3>비밀번호 변경</h3>
 				<hr>
 				<table align="center">
 					<tr>
-						<td>현재 비밀번호</td>
+						<td class="pw_text">현재 비밀번호</td>
 						<td><input width="100" height="50" type="password" id="pw"
 							placeholder="PASSWORD"></td>
 						<td><input type="button" class="button"
-							onclick="return PW_Check('${passwd}')" value="Check"></td>
+							onclick="return PW_Check('${passwd}')" value="검사"></td>
 					</tr>
 					<tr>
-						<td>변경 비밀번호</td>
-						<td><input type="password" id="newpw1" name="newpw1"></td>
+						<td class="pw_text">새로운 비밀번호</td>
+						<td><input type="password" id="newpw1" name="newpw1" placeholder="NEW PASSWORD"></td>
 					</tr>
 					<tr>
-						<td>변경 비밀번호 확인</td>
-						<td><input type="password" id="newpw2"></td>
+						<td class="pw_text">새로운 비밀번호 확인</td>
+						<td><input type="password" id="newpw2"  placeholder="NEW PASSWORD"></td>
 						<td><input type="submit" class="button" value="변경"></td>
 					</tr>
 				</table>
-				<br>
+				<br/>
+				<br/>
 				<div class="che">
 					<input type="button" value="뒤로가기" class="button" id="close"
 						onclick="javascipt:location.href='/Final_Testing/option/mypage'">

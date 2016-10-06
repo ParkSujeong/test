@@ -104,7 +104,6 @@ input[type=text] {
 #div_pro_map {
 	width: 400px;
 	height: 150px;
-	border: 1px solid #bbb;
 	margin: 0 auto;
 }
 
@@ -119,7 +118,6 @@ input[type=text] {
 #div_pro_search {
 	width: 230px;
 	height: 150px;
-	border: 1px solid #bbb;
 	float: right;
 	text-align: center;
 }
@@ -348,6 +346,14 @@ a#account span {
 	position: relative;
 	top: 1px;
 }
+
+.che {
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: center;
+	width: 90px;
+	height: 40px;
+}
 /* button */
 </style>
 
@@ -363,7 +369,8 @@ a#account span {
 
 		<div id="div_pro">
 			<img src="${ sessionScope.profile_img }" name="profile_img"
-				onerror="this.src='/Final_Testing/resources/images/user.png'" id="img_myprofile">
+				onerror="this.src='/Final_Testing/resources/images/user.png'"
+				id="img_myprofile">
 		</div>
 
 		<div id="div_pro_search">
@@ -420,7 +427,7 @@ a#account span {
 
 		<div class="functions">
 			<div class="div_text">
-				<p>현재 비밀번호를 변경할 수 있습니다</p>
+				<p>현재 비밀번호를 변경하시겠습니까?</p>
 			</div>
 			<div class="div_img_map">
 				<div class="div_img">
@@ -452,7 +459,7 @@ a#account span {
 		</div>
 
 		<div class="functions">
-			<div class="div_text">
+			<div class="div_text" >
 				<p>HoneyComb 계정을 삭제할 수 있습니다</p>
 			</div>
 			<div class="div_img_map">
@@ -467,6 +474,13 @@ a#account span {
 
 		</div>
 
+	</div>
+
+	<br />
+	<br />
+	<div class="che">
+		<input type="button" value="뒤로가기" class="button" id="close"
+			onclick="javascipt:location.href='/Final_Testing/option/option_main'">
 	</div>
 
 </body>

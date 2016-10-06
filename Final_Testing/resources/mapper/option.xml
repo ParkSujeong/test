@@ -3,6 +3,30 @@
 
 <mapper namespace="option">
 
+	<!-- !!! -->
+	<update id="passwd_change" parameterType="Map">
+		update members set
+		passwd=#{passwd} where mem_num=#{mem_num}
+	</update>
+	
+		<!-- !!! -->
+	<update id="com_update_member" parameterType="Map">
+		update members set
+		com_num=#{com_num} where mem_num=#{mem_num}
+	</update>
+
+	<!-- !!! -->
+	<update id="profile_change" parameterType="Map">
+		update members set
+		profile_img=#{profile_img} where mem_num=#{mem_num}
+	</update>
+
+	<!-- !!! -->
+	<delete id="com_delete_member" parameterType="int">
+		delete from members
+		where mem_num=#{mem_num}
+	</delete>
+
 	<select id="accept_select" parameterType="int" resultType="company.db.MembersDTO">
 		select * from members where com_num=#{com_num}
 	</select>
@@ -55,28 +79,5 @@
 		select * from mem_career where mem_num=#{mem_num}
 	</select>
 
-	<!-- !!! -->
-	<update id="com_update_member" parameterType="Map">
-		update members set
-		com_num=#{com_num} where mem_num=#{mem_num}
-	</update>
-
-	<!-- !!! -->
-	<update id="passwd_change" parameterType="Map">
-		update members set
-		passwd=#{passwd} where mem_num=#{mem_num}
-	</update>
-
-	<!-- !!! -->
-	<update id="profile_change" parameterType="Map">
-		update members set
-		profile_img=#{profile_img} where mem_num=#{mem_num}
-	</update>
-
-	<!-- !!! -->
-	<delete id="com_delete_member" parameterType="int">
-		delete from members
-		where mem_num=#{mem_num}
-	</delete>
 
 </mapper>

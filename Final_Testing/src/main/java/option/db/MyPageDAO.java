@@ -14,9 +14,9 @@ public class MyPageDAO extends SqlSessionDaoSupport {
 		
 		map.put("mem_num", mem_num);
 		map.put("passwd", passwd);
-		
+
 		int x = getSqlSession().update("option.passwd_change", map);
-		
+
 		if (x >= 1) {
 			System.out.println("password change 성공");
 		} else {

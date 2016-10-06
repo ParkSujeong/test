@@ -95,7 +95,7 @@ hr {
 		<hr>
 		<a href='/Final_Testing/option/company_member_check' class="menu">현재원</a>
 
-		<c:if test="${com_pos_num < 3 }">
+		<c:if test="${com_pos_num <= 4 }">
 			<a href='/Final_Testing/option/accept' class="menu">가입승인</a>
 		</c:if>
 		

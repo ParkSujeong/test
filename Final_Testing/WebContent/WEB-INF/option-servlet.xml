@@ -39,7 +39,7 @@
 
 
 	<!-- option main -->
-	<bean class="option.controller.Option_Controller" /> 
+	<bean class="option.controller.Option_Controller" />
 
 
 
@@ -49,7 +49,8 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
-	<bean id="Accept_Controller" class="option.controller.Accept_Controller" p:dao-ref="acceptDAO" />
+	<bean id="Accept_Controller" class="option.controller.Accept_Controller"
+		p:dao-ref="acceptDAO" />
 
 
 
@@ -67,11 +68,16 @@
 
 	<bean id="Dept_Member_Data" class="option.controller.Dept_MemResume_Controller"
 		p:dao-ref="deptDAO" />
-		
-		
-		
+
+
+
 	<!-- MyPage -->
-	<bean class="option.controller.MyPage_Controller" />
+	<bean id="mypageDAO" class="option.db.MyPageDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+	<bean id="MyPage_Controller" class="option.controller.MyPage_Controller"
+		p:dao-ref="mypageDAO" />
 
 
 </beans>
